@@ -1,0 +1,21 @@
+body {
+    height: 900px;
+    background-image: url("../imgs/ivan_arduino.jpg");
+    background-color: black;
+    background-repeat:no-repeat;
+    background-position-x:center;
+    background-position-y:center;
+    background-size: 45%;
+  }
+form{
+    padding:3px;
+    color:lime;
+    border:1px solid #000000;
+    font-family: "Comic Sans MS", "Comic Sans";
+  }
+input{
+    font-family: "Comic Sans MS", "Comic Sans";
+    color:lime;
+    border:1px solid lime;
+    background-color: #000000;
+}

@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Calculadora sencilla</title>
+        <link href="css/mihoja.css" rel="stylesheet">
+       
+    </head>
+    <body id="cuerpo">
+        
+        
+        <script>
+            var numero_1, numero_2, operacion, resultado;
+            function Calcular(){
+                operacion.toLowerCase();
+                numero_1 = parseInt(numero_1);
+                numero_2 = parseInt(numero_2);
+
+                if(operacion == "suma"){
+                    resultado = numero_1 + numero_2;
+                }else if(operacion == "resta"){
+                    resultado = numero_1 - numero_2;
+                }else if(operacion == "multiplicacion" || operacion == "multiplicación"){
+                    resultado = numero_1 * numero_2;
+                }else if(operacion == "division" || operacion == "división"){
+                    resultado = numero_1 / numero_2;
+                }else{
+                    alert("Introduzca una operación válida(suma, resta, multiplicación o división).")
+                }
+            }
+            function GuardarDatos(){
+                numero_1 = document.getElementById("numero1").value;
+                numero_2 = document.getElementById("numero2").value;
+                operacion = document.getElementById("operacion").value;
+            }
+        </script>
+        <form name="form1" method="post" id="miformulario">
+            <table width="25%" border="1" id="mitabla"
+                <tr>
+                    <td>
+                        Primer número:
+                    </td>
+                    <td>
+                        <label for="textfield"></label>
+                        <input type="text" value="" id="numero1">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Segundo número:
+                    </td>
+                    <td>
+                        <label for="textfield"></label>
+                        <input type="text" value="" id="numero2">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Operación:
+                    </td>
+                    <td>
+                        <label for="textfield"></label>
+                        <input type="text" value="" id="operacion">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="textfield"></label>
+                        <input type="button" value="Calcular" id="button" onclick="GuardarDatos(), Calcular(), document.getElementById('textfield3').value = resultado">
+                    </td>
+                    <td>
+                        <label for="textfield"></label>
+                        <input type="text" value="" id="textfield3">
+                    </td>
+                </tr>
+        </form>
+            
+    </body>
+</html>
