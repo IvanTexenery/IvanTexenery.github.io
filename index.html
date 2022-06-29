@@ -7,33 +7,40 @@
        
     </head>
     <body id="cuerpo">
-        
-        
         <script>
-            var numero_1, numero_2, operacion, resultado;
+            var numero_1, numero_2, resultado, operacion, seleccion;
+
             function Calcular(){
                 operacion.toLowerCase();
-                numero_1 = parseInt(numero_1);
-                numero_2 = parseInt(numero_2);
-
-                if(operacion == "suma"){
-                    resultado = numero_1 + numero_2;
-                }else if(operacion == "resta"){
-                    resultado = numero_1 - numero_2;
-                }else if(operacion == "multiplicacion" || operacion == "multiplicación"){
-                    resultado = numero_1 * numero_2;
-                }else if(operacion == "division" || operacion == "división"){
-                    resultado = numero_1 / numero_2;
-                }else{
-                    alert("Introduzca una operación válida(suma, resta, multiplicación o división).")
-                }
-            }
-            function GuardarDatos(){
                 numero_1 = document.getElementById("numero1").value;
                 numero_2 = document.getElementById("numero2").value;
-                operacion = document.getElementById("operacion").value;
+
+                if(isNaN(numero_1) == false && isNaN(numero_2) == false){
+                    numero_1 = parseInt(numero_1);
+                    numero_2 = parseInt(numero_2);
+
+                    if(operacion == "suma"){
+                        resultado = numero_1 + numero_2;
+                    }else if(operacion == "resta"){
+                        resultado = numero_1 - numero_2;
+                    }else if(operacion == "multiplicacion" || operacion == "multiplicación"){
+                        resultado = numero_1 * numero_2;
+                    }else if(operacion == "division" || operacion == "división"){
+                        resultado = numero_1 / numero_2;
+                    }else{
+                        alert("Introduzca una operación válida(suma, resta, multiplicación o división).");
+                        document.getElementById("numero1").value = "";
+                        document.getElementById("numero2").value = "";
+                    }
+                }else{
+                    alert("Introduzca números válidos.");
+                    document.getElementById("numero1").value = "";
+                    document.getElementById("numero2").value = "";
+                   resultado="";
+                }
             }
         </script>
+        
         <form name="form1" method="post" id="miformulario">
             <table width="25%" border="1" id="mitabla"
                 <tr>
@@ -59,21 +66,38 @@
                         Operación:
                     </td>
                     <td>
-                        <label for="textfield"></label>
-                        <input type="text" value="" id="operacion">
+                        <select name="seleccion_operacion" id="seleccion_operacion">
+                            <option value="" disabled selected>Seleccione una operación</option>
+                            <option value = "suma">Suma</option>
+                            <option value = "resta">Resta</option>
+                            <option value = "multiplicación">Multiplicación</option>
+                            <option value = "división">División</option>
+                        </select>
                     </td>
                 </tr>
+
+                
+        <script>
+            //Parte de javascript para guardar los valores de las operaciones
+            seleccion=document.getElementById('seleccion_operacion');
+            seleccion.addEventListener('change', function(){
+                operacion=this.options[seleccion.selectedIndex].value;
+            });
+
+        </script>
+
+
                 <tr>
                     <td>
                         <label for="textfield"></label>
-                        <input type="button" value="Calcular" id="button" onclick="GuardarDatos(), Calcular(), document.getElementById('textfield3').value = resultado">
+                        <input type="button" value="Calcular" id="button" onclick="Calcular(), document.getElementById('resultado_final').value = resultado">
                     </td>
                     <td>
                         <label for="textfield"></label>
-                        <input type="text" value="" id="textfield3">
+                        <input type="text" value="" id="resultado_final">
                     </td>
                 </tr>
         </form>
-            
+        
     </body>
 </html>
