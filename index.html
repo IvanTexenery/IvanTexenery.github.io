@@ -16,7 +16,8 @@
                 numero_2 = document.getElementById("numero2").value;
 
                 if(isNaN(numero_1) == false && isNaN(numero_2) == false){
-
+                    numero_1 = parseInt(numero_1);
+                    numero_2 = parseInt(numero_2);
                     if(operacion == "suma"){
 
                         resultado = numero_1 + numero_2;
