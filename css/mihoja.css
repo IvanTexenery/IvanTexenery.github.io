@@ -1,16 +1,21 @@
+img{
+  filter: opacity(50%);
+}
 body {
     height: 900px;
     background-image: url("../imgs/ivan_arduino.jpg");
     background-color: black;
     background-repeat:no-repeat;
     background-position-x:center;
-    background-position-y:center;
-    background-size: 45%;
+    background-position-y:center - 50;
+    background-size: 25%;
   }
 form{
-    padding:3px;
+    padding-top: 25%;
+    justify-content:center;
+    display: flex;
     color:lime;
-    border:1px solid #000000;
+    border:1px  #000000;
     font-family: "Comic Sans MS", "Comic Sans";
   }
 input{
@@ -20,8 +25,13 @@ input{
     background-color: #000000;
 }
 select{
-  font-family: "Comic Sans MS", "Comic Sans";
+    font-family: "Comic Sans MS", "Comic Sans";
     color:lime;
     border:1px solid lime;
     background-color: #000000;
+}
+table{
+  background-color: #000000;
+  filter: drop-shadow(gold);
+
 }
