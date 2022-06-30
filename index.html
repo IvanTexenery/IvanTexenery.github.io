@@ -7,6 +7,7 @@
        
     </head>
     <body>
+        <!--Parte de javascript del formulario-->
         <script>
             var numero_1, numero_2, resultado, operacion, seleccion;
 
@@ -56,6 +57,9 @@
                 }
             }
         </script>
+
+
+        <!--Formulario de la calculadora-->
         <form name="form1" method="post" id="miformulario">
             <table width="25%" border="3" id="mitabla">
                 <tr>
@@ -89,9 +93,8 @@
                     </td>
                 </tr>
 
-                
+        <!--Parte de javascript para guardar los valores de las operaciones-->
         <script>
-            //Parte de javascript para guardar los valores de las operaciones
             seleccion=document.getElementById('seleccion_operacion');
             seleccion.addEventListener('change', function(){
                 operacion=this.options[seleccion.selectedIndex].value;
@@ -110,5 +113,20 @@
                 </tr>
             </table>
         </form>
+
+        
+        <!--Parte de javascript concerniente a los enlaces-->
+        <script src="enlaces_redes.js"></script>
+        <!--Parte de html concerniente a los enlaces-->
+        <div style="position: absolute; bottom: 0; right: 0; margin: 5%;">
+        <p>REDES SOCIALES DEL CREADOR <br> El destino de este enlace cambia según la red social que presiones</p>
+        <a id="enlace" target="_blank" href="">Visitar</a>
+        <input type="button" 
+            onclick="changeLink('enlace', 'https://www.youtube.com/channel/UC0fSYqMWpX4mgSFa2Ik145A')" 
+            value="Canal de Youtube"/>
+        <input type="button" 
+            onclick="changeLink('enlace', 'https://github.com/IvanArduinoYoutube?tab=repositories')" 
+            value="Cuenta de Github"/>
+        </div>
     </body>
 </html>

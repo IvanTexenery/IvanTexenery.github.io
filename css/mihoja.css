@@ -35,3 +35,13 @@ table{
   filter: drop-shadow(gold);
 
 }
+p{
+  font-family: "Comic Sans MS", "Comic Sans";
+  color:lime;
+  background-color: #000000;
+}
+a{
+  font-family: "Comic Sans MS", "Comic Sans";
+  color:rgb(0, 145, 255);
+  background-color: #000000;
+}
